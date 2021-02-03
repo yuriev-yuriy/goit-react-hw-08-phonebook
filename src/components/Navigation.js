@@ -1,20 +1,22 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
-import { NavLink } from 'react-router-dom';
+import { MemoryRouter as Router } from 'react-router';
+import { Link as RouterLink } from 'react-router-dom';
+import { Link } from '@material-ui/core';
 import { authSelectors } from '../redux/auth/';
+import s from './AppBar.module.css';
 
 const Navigation = () => {
   const isLoggedIn = useSelector(authSelectors.getIsLoggedIn);
   return (
-    <nav>
-      <NavLink to="/" exact>
+    <nav className={s.container}>
+      <Link component={RouterLink} to="/" color="inherit">
         Main
-      </NavLink>
-
+      </Link>
       {isLoggedIn && (
-        <NavLink to="/contacts" exact>
+        <Link component={RouterLink} to="/contacts" color="inherit">
           PhoneBook
-        </NavLink>
+        </Link>
       )}
     </nav>
   );

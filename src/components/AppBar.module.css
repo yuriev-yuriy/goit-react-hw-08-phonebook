@@ -1,0 +1,19 @@
+.container {
+  display: flex;
+  justify-content: space-between;
+  height: 36px;
+}
+
+.wrap {
+  display: flex;
+}
+
+.text {
+  margin: 0;
+}
+
+.btn {
+  display: flex;
+
+  justify-content: start;
+}

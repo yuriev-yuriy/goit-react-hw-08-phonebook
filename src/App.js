@@ -1,16 +1,17 @@
 import { useEffect, Suspense, lazy } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { Switch, Route } from 'react-router-dom';
-import s from './App.module.css';
-import { MainView } from './view/MainView';
-import PhonebookView from './view/PhonebookView';
-import RegisterView from './view/RegisterView';
-import LoginView from './view/LoginView';
+import { Switch } from 'react-router-dom';
 import NotFoundView from './view/NotFoundView';
-import { AppBar } from './components/AppBar';
+import { Header } from './components/AppBar';
 import { authOperations, authSelectors } from './redux/auth';
 import PrivateRoute from './PrivateRoute';
 import PublicRoute from './PublicRoute';
+
+const MainView = lazy(() => import('./view/MainView'));
+const RegisterView = lazy(() => import('./view/RegisterView'));
+const LoginView = lazy(() => import('./view/LoginView'));
+const PhonebookView = lazy(() => import('./view/PhonebookView'));
+// const NotFoundView = lazy(() => import('./view/NotFoundView'));
 
 const App = () => {
   const dispatch = useDispatch();
@@ -22,11 +23,11 @@ const App = () => {
 
   return (
     !isReloaded && (
-      <div className={s.App}>
-        <AppBar />
+      <>
+        <Header />
         <Switch>
           <Suspense fallback={<p>Loading...</p>}>
-            <PublicRoute path="/" exact>
+            <PublicRoute exact path="/">
               <MainView />
             </PublicRoute>
             <PublicRoute path="/register" restricted redirectTo="/contacts">
@@ -38,12 +39,13 @@ const App = () => {
             <PrivateRoute path="/contacts" redirectTo="/login">
               <PhonebookView />
             </PrivateRoute>
+
             {/* <PublicRoute >
           <NotFoundView />
           </PublicRoute> */}
           </Suspense>
         </Switch>
-      </div>
+      </>
     )
   );
 };

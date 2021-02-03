@@ -12,7 +12,7 @@ function PublicRoute({
   const shouldRedirect = isLoggedIn && restricted;
   return (
     <Route {...otherProps}>
-      {shouldRedirect ? <Redirect to={redirectTo} /> : children}{' '}
+      {shouldRedirect ? <Redirect to={redirectTo} /> : children}
     </Route>
   );
 }
