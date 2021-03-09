@@ -27,15 +27,15 @@ const ContactForm = () => {
   const makeSubmit = event => {
     event.preventDefault();
 
-    // if (
-    //   contacts.find(
-    //     contact => contact.name.toLowerCase() === name.toLowerCase(),
-    //   )
-    // ) {
-    //   alert(`${name} is already in contacts`);
-    //   reset();
-    //   return;
-    // }
+    if (
+      contacts.find(
+        contact => contact.name.toLowerCase() === name.toLowerCase(),
+      )
+    ) {
+      alert(`${name} is already in contacts`);
+      reset();
+      return;
+    }
     dispatch(phoneBookOperations.addContact(name, number));
     reset();
   };

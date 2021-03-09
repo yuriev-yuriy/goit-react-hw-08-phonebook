@@ -1,12 +1,12 @@
 // import { connect } from 'react-redux';
 import { useSelector, useDispatch } from 'react-redux';
-import phoneBookSelectors from '../redux/phoneBook/selectors';
+import { getFilteredContacts } from '../redux/phoneBook/phoneBookSelectors';
 import phoneBookOperations from '../redux/phoneBook/operations';
 import actions from '../redux/phoneBook/actions';
 
 const ContactList = () => {
   const dispatch = useDispatch();
-  const contacts = useSelector(phoneBookSelectors.getFilteredContacts);
+  const contacts = useSelector(getFilteredContacts);
   const delMethot = id => dispatch(phoneBookOperations.deleteContact(id));
 
   return (
