@@ -6,6 +6,7 @@ const wrapper = {
   height: '91vh',
 };
 const center = {
+  paddingTop: '20vh',
   textAlign: 'center',
   width: '40vw',
   backgroundColor: '#3f79c9',
@@ -20,7 +21,8 @@ const otherSide = {
   background: 'linear-gradient(0.25turn, #3f79c9, #e8f5e9)',
 };
 const content = {
-  marginTop: '20vh',
+  color: '#393546',
+  fontSize: 30,
 };
 const MainView = () => {
   return (
@@ -28,7 +30,7 @@ const MainView = () => {
       <div style={side}></div>
       <div style={center}>
         <h3 style={content}>Welcome to PhoneBook APP</h3>
-        <h4>to continue LOG IN or SIGN UP</h4>
+        <h4 style={content}>to continue LOG IN or SIGN UP</h4>
       </div>
       <div style={otherSide}></div>
     </div>
