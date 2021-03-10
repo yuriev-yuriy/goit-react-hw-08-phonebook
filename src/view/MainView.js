@@ -1,5 +1,38 @@
+import { blue, green } from '@material-ui/core/colors';
+
+const wrapper = {
+  display: 'flex',
+  flexDirecrion: 'row',
+  height: '91vh',
+};
+const center = {
+  textAlign: 'center',
+  width: '40vw',
+  backgroundColor: '#3f79c9',
+};
+const side = {
+  backgroundColor: '#e8f5e9',
+  width: '30vw',
+  background: 'linear-gradient(0.25turn, #bbdefb, #3f79c9)',
+};
+const otherSide = {
+  width: '30vw',
+  background: 'linear-gradient(0.25turn, #3f79c9, #e8f5e9)',
+};
+const content = {
+  marginTop: '20vh',
+};
 const MainView = () => {
-  return <h3>Welcome to PhoneBook APP to continue LOG IN or SIGN UP</h3>;
+  return (
+    <div style={wrapper}>
+      <div style={side}></div>
+      <div style={center}>
+        <h3 style={content}>Welcome to PhoneBook APP</h3>
+        <h4>to continue LOG IN or SIGN UP</h4>
+      </div>
+      <div style={otherSide}></div>
+    </div>
+  );
 };
 
 export default MainView;

@@ -32,9 +32,9 @@ const RegisterView = () => {
   };
 
   return (
-    <>
+    <div className={s.Wrapper}>
       <h1>SinUp here</h1>
-      <form onSubmit={handleSubmit}>
+      <form onSubmit={handleSubmit} className={s.Wrapper}>
         <label className={s.input}>
           name
           <input value={name} type="text" name="name" onChange={handleChange} />
@@ -57,9 +57,13 @@ const RegisterView = () => {
             onChange={handleChange}
           />
         </label>
-        <button type="submit">signup</button>
+        <button type="submit" className={s.btn}>
+          sign up
+        </button>
+        <h2>password must be at least 7 characters</h2>
+        <h3>пароль должен быть не менее 7 символов</h3>
       </form>
-    </>
+    </div>
   );
 };
 

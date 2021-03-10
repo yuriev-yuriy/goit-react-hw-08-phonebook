@@ -1,5 +1,22 @@
 .input {
   display: flex;
-  direction: column;
+  /* direction: column; */
+  justify-content: center;
   margin-bottom: 20px;
+}
+
+.Wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.btn {
+  width: 120px;
+  height: 36px;
+  border-radius: 10px;
+  background: rgb(74, 71, 236);
+  border: none;
+  cursor: pointer;
+  outline: none;
 }

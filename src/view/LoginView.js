@@ -1,6 +1,8 @@
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { authOperations } from '../redux/auth/';
+import s from '../App.module.css';
+
 const LoginView = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -25,7 +27,7 @@ const LoginView = () => {
   };
 
   return (
-    <>
+    <div className={s.Wrapper}>
       <h1>Login here</h1>
       <form onSubmit={handleSubmit}>
         <label>
@@ -50,7 +52,7 @@ const LoginView = () => {
         </label>
         <button type="submit">LogIn</button>
       </form>
-    </>
+    </div>
   );
 };
 

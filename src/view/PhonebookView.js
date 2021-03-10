@@ -33,20 +33,9 @@ const PhonebookView = () => {
         ) : (
           <ContactList />
         )}
-
-        {/* <ContactList /> */}
       </div>
     </div>
   );
 };
 
-// const mapStateToProps = state => ({
-//   isLoading: getIsLoading(state),
-// });
-
-// const mapDispatchToProps = dispatch => ({
-//   fetchContacts: () => dispatch(operations.fetchContacts()),
-// });
-
-// export default connect(mapStateToProps, mapDispatchToProps)(PhonebookView);
 export default PhonebookView;
