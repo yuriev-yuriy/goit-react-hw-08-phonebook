@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import authOperations from '../redux/auth/auth-operations';
-import s from './RegisterView.module.css';
+import s from './ViewStyles.module.css';
 
 const RegisterView = () => {
   const [name, setName] = useState('');
