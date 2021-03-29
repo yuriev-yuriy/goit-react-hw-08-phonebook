@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import authOperations from '../redux/auth/auth-operations';
+import image from '../images/uzorT.jpg';
 import s from './ViewStyles.module.css';
 
 const RegisterView = () => {
@@ -24,44 +25,54 @@ const RegisterView = () => {
 
   const handleSubmit = event => {
     event.preventDefault();
-    dispatch(authOperations.register({ name, email, password }));
-    console.log(`Forma ${(name, email, password)}`);
-    setName('');
-    setEmail('');
-    setPassword('');
+    if (password.length >= 7) {
+      dispatch(authOperations.register({ name, email, password }));
+      console.log(`Forma ${(name, email, password)}`);
+      setName('');
+      setEmail('');
+      setPassword('');
+    } else {
+      alert('Password should be at least 7 sharacters');
+    }
   };
 
   return (
-    <div className={s.Wrapper}>
-      <h1>SinUp here</h1>
-      <form onSubmit={handleSubmit} className={s.Wrapper}>
-        <label className={s.input}>
-          name
-          <input value={name} type="text" name="name" onChange={handleChange} />
-        </label>
-        <label className={s.input}>
-          email
-          <input
-            value={email}
-            type="email"
-            name="email"
-            onChange={handleChange}
-          />
-        </label>
-        <label className={s.input}>
-          password
-          <input
-            value={password}
-            type="password"
-            name="password"
-            onChange={handleChange}
-          />
-        </label>
-        <button type="submit" className={s.btn}>
-          sign up
-        </button>
-        <h2>password must be at least 7 characters</h2>
-        <h3>пароль должен быть не менее 7 символов</h3>
+    <div className={s.wrapper} style={{ backgroundImage: `url(${image})` }}>
+      <form onSubmit={handleSubmit} className={s.transparent}>
+        <div className={s.formInner}>
+          <h1>SignUp here</h1>
+          <label className={s.input}>
+            name
+            <input
+              value={name}
+              type="text"
+              name="name"
+              onChange={handleChange}
+            />
+          </label>
+          <label className={s.input}>
+            email
+            <input
+              value={email}
+              type="email"
+              name="email"
+              onChange={handleChange}
+            />
+          </label>
+          <label className={s.input}>
+            password
+            <input
+              value={password}
+              type="password"
+              name="password"
+              min="7"
+              onChange={handleChange}
+            />
+          </label>
+          <button type="submit" className={s.btn}>
+            sign up
+          </button>
+        </div>
       </form>
     </div>
   );

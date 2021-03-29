@@ -1,7 +1,7 @@
 import { useDispatch, useSelector } from 'react-redux';
 import { authSelectors, authOperations } from '../../redux/auth';
 import Button from '@material-ui/core/Button';
-import s from '../AppBar.module.css';
+import s from '../Components.module.css';
 
 export const UserMenu = () => {
   const dispatch = useDispatch();

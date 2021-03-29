@@ -6,8 +6,16 @@ import phoneBookOperations from '../redux/phoneBook/operations';
 import ContactForm from '../Phonebook/ContactForm';
 import Filter from '../Phonebook/Filter';
 import ContactList from '../Phonebook/ContactList';
-import s from '../App.module.css';
 import { getIsLoading } from '../redux/phoneBook/phoneBookSelectors';
+import image from '../images/uzorM.jpg';
+import s from './ViewStyles.module.css';
+
+const styles = {
+  layout: {
+    backgroundImage: `url(${image})`,
+    backgroundSize: 'auto',
+  },
+};
 
 const PhonebookView = () => {
   const dispatch = useDispatch();
@@ -17,7 +25,7 @@ const PhonebookView = () => {
   }, [dispatch]);
 
   return (
-    <div className={s.App}>
+    <div className={s.wrapper} style={styles.layout}>
       <div className={s.Wrapper}>
         <h1>Phonebook</h1>
         <ContactForm />

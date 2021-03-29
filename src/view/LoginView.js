@@ -1,7 +1,8 @@
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { authOperations } from '../redux/auth/';
-import s from '../App.module.css';
+import image from '../images/uzorT.jpg';
+import s from './ViewStyles.module.css';
 
 const LoginView = () => {
   const [email, setEmail] = useState('');
@@ -27,30 +28,39 @@ const LoginView = () => {
   };
 
   return (
-    <div className={s.Wrapper}>
-      <h1>Login here</h1>
-      <form onSubmit={handleSubmit}>
-        <label>
-          {' '}
-          Email
-          <input
-            type="email"
-            value={email}
-            name="email"
-            onChange={handleChange}
-          />
-        </label>
-        <label>
-          {' '}
-          Password
-          <input
-            type="password"
-            value={password}
-            name="password"
-            onChange={handleChange}
-          />
-        </label>
-        <button type="submit">LogIn</button>
+    <div className={s.wrapper} style={{ backgroundImage: `url(${image})` }}>
+      <form onSubmit={handleSubmit} className={s.transparent}>
+        <div className={s.formInner}>
+          <h1>Login here</h1>
+          <label for="email">
+            Email
+            <input
+              id="email"
+              required
+              type="email"
+              value={email}
+              name="email"
+              // placeholder="Enter Your Email..."
+              onChange={handleChange}
+            />
+          </label>
+          <label for="pass">
+            {' '}
+            Password
+            <input
+              id="pass"
+              required
+              type="password"
+              value={password}
+              name="password"
+              // placeholder="Enter Your Password..."
+              onChange={handleChange}
+            />
+          </label>
+          <button className={s.btn} type="submit">
+            LogIn
+          </button>
+        </div>
       </form>
     </div>
   );

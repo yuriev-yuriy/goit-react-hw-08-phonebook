@@ -1,3 +1,13 @@
+html,
+body {
+  margin: 0px;
+  height: 100%;
+}
+
+* {
+  box-sizing: border-box;
+}
+
 .input {
   display: flex;
   justify-content: center;
@@ -32,13 +42,12 @@
 
 .wrapper {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   height: 91vh;
-  margin: -8;
-  padding: 0;
+  justify-content: center;
+  align-items: center;
 }
 .center {
-  padding-top: 20vh;
   text-align: center;
   width: 40vw;
 }
@@ -52,4 +61,100 @@
   color: #524e5f;
   outline: 1px solid #fff;
   font-size: 30px;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+}
+
+input:focus::placeholder {
+  color: transparent;
+}
+
+/* FORM  */
+.transparent {
+  position: relative;
+  max-width: 400px;
+  padding: 60px 50px;
+  margin: 50px auto 0;
+  border: 1px solid #fff;
+  background-size: cover;
+}
+.transparent:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    to right bottom,
+    rgba(43, 44, 78, 0.5),
+    rgba(104, 22, 96, 0.5)
+  );
+}
+.form-inner {
+  position: relative;
+}
+.formInner h1 {
+  position: relative;
+  margin-top: 0;
+  color: white;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 300;
+  font-size: 26px;
+  text-transform: uppercase;
+  text-align: center;
+}
+.formInner label {
+  display: block;
+  padding: 0 15px;
+  font-family: 'Roboto', sans-serif;
+  color: rgba(255, 255, 255, 0.6);
+  text-transform: uppercase;
+  font-size: 14px;
+}
+.formInner input {
+  display: block;
+  width: 110%;
+  padding: 0 15px;
+  margin: 10px 0 15px;
+  border-width: 0;
+  line-height: 40px;
+  border-radius: 20px;
+  color: white;
+  background: rgba(255, 255, 255, 0.2);
+  font-family: 'Roboto', sans-serif;
+  /* outline: none; */
+}
+
+input:valid {
+  outline: green;
+}
+
+input:invalid {
+  outline: red;
+}
+
+label {
+  position: relative;
+  margin: 20px 0;
+  text-transform: none;
+  cursor: pointer;
+}
+
+.btn {
+  cursor: pointer;
+  position: relative;
+  background: #1762ee;
+  display: block;
+  width: 100%;
+  padding-bottom: 40px;
+  margin: 30px 0 05px;
+  border-width: 0;
+  line-height: 40px;
+  border-radius: 20px;
+  color: white;
+  font-family: 'Roboto', sans-serif;
 }

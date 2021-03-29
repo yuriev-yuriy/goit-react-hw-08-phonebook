@@ -1,5 +1,5 @@
 import { NavLink } from 'react-router-dom';
-import s from './AppBar.module.css';
+import s from './Components.module.css';
 
 const AuthNav = () => {
   return (
