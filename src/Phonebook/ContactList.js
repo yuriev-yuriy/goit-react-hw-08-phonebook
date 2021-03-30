@@ -2,7 +2,7 @@
 import { useSelector, useDispatch } from 'react-redux';
 import { getFilteredContacts } from '../redux/phoneBook/phoneBookSelectors';
 import phoneBookOperations from '../redux/phoneBook/operations';
-import actions from '../redux/phoneBook/actions';
+// import actions from '../redux/phoneBook/actions';
 
 const ContactList = () => {
   const dispatch = useDispatch();

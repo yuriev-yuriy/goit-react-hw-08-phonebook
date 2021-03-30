@@ -32,7 +32,7 @@ const LoginView = () => {
       <form onSubmit={handleSubmit} className={s.transparent}>
         <div className={s.formInner}>
           <h1>Login here</h1>
-          <label for="email">
+          <label>
             Email
             <input
               id="email"
@@ -44,7 +44,7 @@ const LoginView = () => {
               onChange={handleChange}
             />
           </label>
-          <label for="pass">
+          <label>
             {' '}
             Password
             <input

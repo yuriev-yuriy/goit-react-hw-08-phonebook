@@ -1,7 +1,7 @@
 import { connect } from 'react-redux';
 import actions from '../redux/phoneBook/actions';
 import { getFilter } from '../redux/phoneBook/phoneBookSelectors';
-import { getFilteredContacts } from '../redux/phoneBook/phoneBookSelectors';
+// import { getFilteredContacts } from '../redux/phoneBook/phoneBookSelectors';
 
 const Filter = ({ value, onSubmit }) => {
   return (

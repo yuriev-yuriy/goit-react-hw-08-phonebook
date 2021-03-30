@@ -7,7 +7,7 @@ export const UserMenu = () => {
   const dispatch = useDispatch();
   const userName = useSelector(authSelectors.getUsername);
   return (
-    <div className={s.wrap}>
+    <div>
       <p className={s.text}>Welcome {userName}</p>
       <Button
         className={s.btn}

@@ -7,12 +7,12 @@ import s from './Components.module.css';
 const Navigation = () => {
   const isLoggedIn = useSelector(authSelectors.getIsLoggedIn);
   return (
-    <nav className={s.container}>
-      <NavLink to="/" color="inherit">
+    <nav>
+      <NavLink to="/" className={s.text}>
         Main
       </NavLink>
       {isLoggedIn && (
-        <NavLink to="/contacts" color="inherit">
+        <NavLink to="/contacts" className={s.text}>
           PhoneBook
         </NavLink>
       )}

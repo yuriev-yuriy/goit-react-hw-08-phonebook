@@ -28,6 +28,8 @@ const logIn = createAsyncThunk('auth/login', async credentials => {
     token.set(data.token);
     return data;
   } catch (error) {
+    console.log('HI LOL');
+    alert('Not valid credentials, try again');
     throw new Error(error);
   }
 });

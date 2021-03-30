@@ -1,8 +1,6 @@
-.App {
-  background: #ccc;
-  width: 480px;
-  margin: 0 auto;
-}
+/* .App {
+  position: relative;
+} */
 
 .Wrapper {
   display: flex;

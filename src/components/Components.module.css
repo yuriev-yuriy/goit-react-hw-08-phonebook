@@ -1,8 +1,12 @@
 .container {
   display: flex;
   justify-content: space-between;
-  height: 36px;
-  /* margin-right: 20px; */
+  height: 42px;
+  background: linear-gradient(#3c5e16, rgb(3, 51, 23), #3c5e16);
+  align-items: center;
+  box-shadow: 0 18px 12px rgba(0, 0, 0, 0.44), 0 10px 10px rgba(0, 0, 0, 0.44);
+  position: relative;
+  z-index: 2;
 }
 
 .wrap {
@@ -10,14 +14,22 @@
 }
 
 .text {
-  /* margin: 0; */
+  text-transform: uppercase;
   font-weight: 600;
   margin-right: 20px;
-  color: red;
+  color: #ffffff54;
+  border: 1px solid #fff;
+  border-radius: 5px;
+  text-decoration: none;
+  padding: 4px 12px;
+}
+
+.text:first-child {
+  margin-left: 16px;
 }
 
 .btn {
   display: flex;
-
-  justify-content: start;
+  /* justify-content: start; */
+  flex: start;
 }

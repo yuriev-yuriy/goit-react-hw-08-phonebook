@@ -3,11 +3,11 @@ import s from './Components.module.css';
 
 const AuthNav = () => {
   return (
-    <div className={s.container}>
-      <NavLink to="/register" color="inherit">
+    <div>
+      <NavLink to="/register" className={s.text}>
         SignUp
       </NavLink>
-      <NavLink to="/login" color="inherit">
+      <NavLink to="/login" className={s.text}>
         Login
       </NavLink>
     </div>
