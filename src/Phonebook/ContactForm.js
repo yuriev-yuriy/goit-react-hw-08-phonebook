@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import s from '../App.module.css';
+import s from './Phonebook.module.css';
 import { getContacts } from '../redux/phoneBook/phoneBookSelectors';
 import phoneBookOperations from '../redux/phoneBook/operations';
 
@@ -41,40 +41,26 @@ const ContactForm = () => {
   };
 
   return (
-    <>
-      <form onSubmit={makeSubmit}>
-        <label htmlFor="name">
-          Name
+    <div className={s.wrap}>
+      <form onSubmit={makeSubmit} className={s.transparent}>
+        <div className={s.formInner}>
+          <h3>Add Contact </h3>
+          <label htmlFor="name">Name</label>
           <input type="text" value={name} onChange={changeNameInput} required />
-        </label>
-
-        <label htmlFor="number">
-          Number
+          <label htmlFor="number">Number</label>
           <input
             type="tel"
             value={number}
             onChange={changeNumberInput}
             required
           />
-        </label>
-        <button className={s.Btn} type="submit">
-          Add contact
-        </button>
+          <button className={s.addBtn} type="submit">
+            Add
+          </button>
+        </div>
       </form>
-    </>
+    </div>
   );
 };
 
-// const mapStateToProps = state => {
-//   const { phoneBook:{contacts} } = state;
-//   return {
-//     contacts: contacts,
-//   };
-// };
-
-// const mapDispatchToProps = dispatch => ({
-//   onSubmit: (name, number) => dispatch(actions.addContactsSuccess(name, number)),
-// });
-
-// export default connect(mapStateToProps, mapDispatchToProps)(ContactForm);
 export default ContactForm;

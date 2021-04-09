@@ -3,6 +3,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { getFilteredContacts } from '../redux/phoneBook/phoneBookSelectors';
 import phoneBookOperations from '../redux/phoneBook/operations';
 // import actions from '../redux/phoneBook/actions';
+import s from './Phonebook.module.css';
 
 const ContactList = () => {
   const dispatch = useDispatch();
@@ -10,33 +11,21 @@ const ContactList = () => {
   const delMethot = id => dispatch(phoneBookOperations.deleteContact(id));
 
   return (
-    <ul>
+    <ul className={s.list}>
       {contacts.map(({ id, name, number }) => (
-        <li key={id}>
-          {name}:{number}
-          <button onClick={() => delMethot(id)}>Delete</button>
+        <li className={s.item} key={id}>
+          <div className={s.logo}>{name[0].toUpperCase()}</div>
+          <div className={s.contact}>
+            <div>{name}</div>
+            <div>{number}</div>
+          </div>
+          <button className={s.btn} onClick={() => delMethot(id)}>
+            Del
+          </button>
         </li>
       ))}
     </ul>
   );
 };
-
-// const getFilteredContacts = (contacts, filter) => {
-//   const normalizedFilter = filter.toLowerCase();
-
-//   return contacts.filter(
-//     contact =>
-//       contact.name.toLowerCase().includes(normalizedFilter) ||
-//       contact.number.includes(normalizedFilter),
-//   );
-// };
-
-// const mapStateToProps = ({phoneBook: { contacts, filter }}) => ({
-//   contacts: getFilteredContacts(contacts, filter),
-// });
-
-// const mapDispatchToProps = dispatch => ({
-//   delMethot: id => dispatch(actions.deleteContactsSuccess(id)),
-// });
 
 export default ContactList;

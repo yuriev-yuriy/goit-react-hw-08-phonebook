@@ -2,12 +2,19 @@ import { connect } from 'react-redux';
 import actions from '../redux/phoneBook/actions';
 import { getFilter } from '../redux/phoneBook/phoneBookSelectors';
 // import { getFilteredContacts } from '../redux/phoneBook/phoneBookSelectors';
+import s from './Phonebook.module.css';
 
 const Filter = ({ value, onSubmit }) => {
   return (
     <>
-      <p>Find contacts by name </p>
-      <input type="text" value={value} onChange={onSubmit} />
+      {/* <p>Find contacts by name </p> */}
+      <input
+        className={s.input}
+        type="text"
+        value={value}
+        onChange={onSubmit}
+        placeholder="Find contacts by name"
+      />
     </>
   );
 };

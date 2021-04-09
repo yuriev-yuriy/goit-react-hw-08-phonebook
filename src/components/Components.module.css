@@ -9,19 +9,31 @@
   z-index: 2;
 }
 
+.innerContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
 .wrap {
   display: flex;
 }
 
 .text {
+  font-family: 'Courier New', sans-serif;
   text-transform: uppercase;
   font-weight: 600;
   margin-right: 20px;
   color: #ffffff54;
-  border: 1px solid #fff;
+  border: 1px solid #ffffff54;
   border-radius: 5px;
   text-decoration: none;
   padding: 4px 12px;
+}
+
+.text:hover {
+  color: #fff;
+  border-color: #fff;
 }
 
 .text:first-child {
@@ -29,7 +41,24 @@
 }
 
 .btn {
+  font-family: 'Courier New', sans-serif;
+  text-transform: uppercase;
+  font-size: 17px;
+  font-weight: 600;
   display: flex;
-  /* justify-content: start; */
-  flex: start;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff54;
+  border: 1px solid #ffffff54;
+  border-radius: 5px;
+  background: transparent;
+  width: 60px;
+  height: 28px;
+  margin-right: 20px;
+  cursor: pointer;
+}
+
+.btn:hover {
+  color: #fff;
+  border-color: #fff;
 }

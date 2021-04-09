@@ -2,33 +2,34 @@ import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useEffect } from 'react';
 import Loader from 'react-loader-spinner';
+import authSelectors from '../redux/auth/auth-selectors';
 import phoneBookOperations from '../redux/phoneBook/operations';
 import ContactForm from '../Phonebook/ContactForm';
 import Filter from '../Phonebook/Filter';
 import ContactList from '../Phonebook/ContactList';
 import { getIsLoading } from '../redux/phoneBook/phoneBookSelectors';
-import image from '../images/uzorM.jpg';
+// import image from '../images/uzorM.jpg';
 import s from './ViewStyles.module.css';
 
-const styles = {
-  layout: {
-    backgroundImage: `url(${image})`,
-    backgroundSize: 'auto',
-  },
-};
+// const styles = {
+//   layout: {
+//     backgroundImage: `url(${image})`,
+//     backgroundSize: 'auto',
+//   },
+// };
 
 const PhonebookView = () => {
   const dispatch = useDispatch();
   const isLoadingContacts = useSelector(getIsLoading);
+  const name = useSelector(authSelectors.getUsername);
   useEffect(() => {
     dispatch(phoneBookOperations.fetchContacts());
   }, [dispatch]);
 
   return (
-    <div className={s.wrapper} style={styles.layout}>
+    <div className={s.wrapper}>
       <div className={s.Wrapper}>
-        <h1>Phonebook</h1>
-        <ContactForm />
+        <h1 className={s.title}>{name} Phonebook</h1>
         <Filter />
         {isLoadingContacts ? (
           <Loader
@@ -42,6 +43,7 @@ const PhonebookView = () => {
           <ContactList />
         )}
       </div>
+      <ContactForm />
     </div>
   );
 };
