@@ -8,15 +8,15 @@ import ContactForm from '../Phonebook/ContactForm';
 import Filter from '../Phonebook/Filter';
 import ContactList from '../Phonebook/ContactList';
 import { getIsLoading } from '../redux/phoneBook/phoneBookSelectors';
-// import image from '../images/uzorM.jpg';
+import image from '../images/bg-grey.jpg';
 import s from './ViewStyles.module.css';
 
-// const styles = {
-//   layout: {
-//     backgroundImage: `url(${image})`,
-//     backgroundSize: 'auto',
-//   },
-// };
+const styles = {
+  layout: {
+    backgroundImage: `url(${image})`,
+    backgroundSize: '100%',
+  },
+};
 
 const PhonebookView = () => {
   const dispatch = useDispatch();
@@ -27,7 +27,7 @@ const PhonebookView = () => {
   }, [dispatch]);
 
   return (
-    <div className={s.wrapper}>
+    <div className={s.wrapper} style={styles.layout}>
       <div className={s.Wrapper}>
         <h1 className={s.title}>{name} Phonebook</h1>
         <Filter />

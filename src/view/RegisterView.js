@@ -27,7 +27,6 @@ const RegisterView = () => {
     event.preventDefault();
     if (password.length >= 7) {
       dispatch(authOperations.register({ name, email, password }));
-      console.log(`Forma ${(name, email, password)}`);
       setName('');
       setEmail('');
       setPassword('');

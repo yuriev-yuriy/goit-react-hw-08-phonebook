@@ -14,9 +14,3 @@ export const getFilteredContacts = createSelector(
     );
   },
 );
-
-// const phoneBookSelectors = {
-//   getIsLoading, getFilter, getContacts, getFilteredContacts,
-// }
-
-// export default phoneBookSelectors;

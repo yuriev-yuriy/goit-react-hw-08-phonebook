@@ -20,25 +20,6 @@ export const deleteContactsError = createAction(
 
 const changeFilter = createAction('phoneBook/Filter');
 
-// const addContact = (name, number) => ({
-//   type: types.Add,
-//   payload: {
-//     id: uuidv4(),
-//     name,
-//     number,
-//   },
-// });
-
-// const deleteContact = (id) => ({
-//   type: types.Delete,
-//   payload: id,
-// })
-
-// const changeFilter = (value) => ({
-//   type: types.Filter,
-//   payload: value,
-// })
-
 // eslint-disable-next-line import/no-anonymous-default-export
 export default {
   deleteContactsRequest,

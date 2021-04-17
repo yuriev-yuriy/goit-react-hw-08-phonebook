@@ -40,7 +40,6 @@ const LoginView = () => {
               type="email"
               value={email}
               name="email"
-              // placeholder="Enter Your Email..."
               onChange={handleChange}
             />
           </label>
@@ -53,7 +52,6 @@ const LoginView = () => {
               type="password"
               value={password}
               name="password"
-              // placeholder="Enter Your Password..."
               onChange={handleChange}
             />
           </label>

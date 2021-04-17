@@ -1,8 +1,6 @@
-// import { connect } from 'react-redux';
 import { useSelector, useDispatch } from 'react-redux';
 import { getFilteredContacts } from '../redux/phoneBook/phoneBookSelectors';
 import phoneBookOperations from '../redux/phoneBook/operations';
-// import actions from '../redux/phoneBook/actions';
 import s from './Phonebook.module.css';
 
 const ContactList = () => {
@@ -20,7 +18,7 @@ const ContactList = () => {
             <div>{number}</div>
           </div>
           <button className={s.btn} onClick={() => delMethot(id)}>
-            Del
+            x
           </button>
         </li>
       ))}

@@ -1,5 +1,4 @@
 import { configureStore, getDefaultMiddleware } from '@reduxjs/toolkit';
-// from FLUSH till REGISTER to avoid error in console
 import {
   persistStore,
   persistReducer,
@@ -19,8 +18,6 @@ const persistConfig = {
   storage,
   whitelist: ['token'],
 };
-
-// const persistedReducer = persistReducer(persistConfig, authReducer);
 
 const middleware = [
   ...getDefaultMiddleware({

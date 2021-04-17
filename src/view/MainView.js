@@ -3,9 +3,9 @@ import s from './ViewStyles.module.css';
 import image from '../images/uzorT.jpg';
 
 const MainView = () => {
+  console.log('No errors here!');
   return (
     <div className={s.wrapper} style={{ backgroundImage: `url(${image})` }}>
-      <div className={s.side}></div>
       <div className={s.center}>
         <h3 className={s.content}>Welcome to PhoneBook APP</h3>
         <h4 className={s.content}>
@@ -21,7 +21,6 @@ const MainView = () => {
           </NavLink>
         </h4>
       </div>
-      <div className={s.otherSide}></div>
     </div>
   );
 };
