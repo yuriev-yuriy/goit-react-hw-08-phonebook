@@ -189,3 +189,9 @@ label {
   color: white;
   font-family: 'Roboto', sans-serif;
 }
+
+.loader {
+  display: flex;
+  justify-content: center;
+  margin-top: 40vh;
+}
